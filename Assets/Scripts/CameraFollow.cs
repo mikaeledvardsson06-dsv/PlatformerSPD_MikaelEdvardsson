@@ -15,4 +15,4 @@ public class CameraFollow : MonoBehaviour
         //lerp flyttar från en punkt till en annan punkt över en viss tid, vart kameran är jämfört med vart spelaren är + offseten * tiden på lurpen
         transform.position = newPosition;
     }
-}
+}//Testing
