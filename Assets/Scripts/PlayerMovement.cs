@@ -9,11 +9,13 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private float jumpForce = 300.0f;
     [SerializeField] private LayerMask whatIsGround;
     [SerializeField] private Transform leftFoot, rightFoot;
+    [SerializeField] private int extraJumpValue = 1;
     private float horizontalValue;
     private bool isGrounded;
     private Rigidbody2D rgbd;
     private SpriteRenderer rend;
     private float rayDistance = 0.25f;
+    private int extraJumps;
 
     private Animator anim;
 
@@ -64,14 +66,22 @@ public class PlayerMovement : MonoBehaviour
             Flipsprite(false); //ifall velocity är över 0 betyder det att spelaren går åt höger och behöver inte flippas
         }
         
-      
+        if (isGrounded)
+        {
+            extraJumps = extraJumpValue;
+        }
         
         if (Input.GetButtonDown("Jump") && CheckIfGrounded() == true)
         {
             Jump();
         }
+        else if (extraJumps > 0)
+        {
+            Jump();
+            extraJumps--;
+        }
 
-        anim.SetFloat("MoveSpeed", Mathf.Abs (rgbd.linearVelocity.x));
+        anim.SetFloat("MoveSpeed", Mathf.Abs(rgbd.linearVelocity.x));
         anim.SetFloat("VerticalSpeed", rgbd.linearVelocity.y);
         anim.SetBool("IsGrounded", CheckIfGrounded());
 
