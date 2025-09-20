@@ -15,8 +15,9 @@ GameObject:
   - component: {fileID: 4966225100589262581}
   - component: {fileID: 395372991799501466}
   - component: {fileID: 3573206135795165957}
+  - component: {fileID: 339760558016744548}
   m_Layer: 7
-  m_Name: EnemyShooter
+  m_Name: (ur funktion)
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -240,3 +241,17 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 0.6163635, y: 0.6685138}
   m_EdgeRadius: 0
+--- !u!114 &339760558016744548
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5644412679132727113}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceec1863bf9246842b483fc678b8fb46, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Shoot: {fileID: 5978279682309264984, guid: ba62a3f929306cc4489673a127c448c1, type: 3}
+  bulletPos: {fileID: 0}
