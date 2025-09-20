@@ -81,6 +81,7 @@ public class PlayerMovement : MonoBehaviour
             {
                 Jump();
                 extraJumps--;
+                anim.SetTrigger("DoubbleJump");
             }
         }
 
