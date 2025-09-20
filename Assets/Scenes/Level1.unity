@@ -20595,6 +20595,7 @@ MonoBehaviour:
     m_Bits: 1088
   leftFoot: {fileID: 1353467661}
   rightFoot: {fileID: 1562661758}
+  extraJumpValue: 1
   SpawnPosition: {fileID: 21409026}
   HealthSlider: {fileID: 1055720651}
   fillColor: {fileID: 1867669844}

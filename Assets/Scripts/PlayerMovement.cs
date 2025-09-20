@@ -66,19 +66,22 @@ public class PlayerMovement : MonoBehaviour
             Flipsprite(false); //ifall velocity är över 0 betyder det att spelaren går åt höger och behöver inte flippas
         }
         
-        if (isGrounded)
+        if (CheckIfGrounded())
         {
             extraJumps = extraJumpValue;
         }
         
-        if (Input.GetButtonDown("Jump") && CheckIfGrounded() == true)
+        if (Input.GetButtonDown("Jump"))
         {
-            Jump();
-        }
-        else if (extraJumps > 0)
-        {
-            Jump();
-            extraJumps--;
+            if (CheckIfGrounded())
+            {
+                Jump();
+            }
+            else if (extraJumps > 0)
+            {
+                Jump();
+                extraJumps--;
+            }
         }
 
         anim.SetFloat("MoveSpeed", Mathf.Abs(rgbd.linearVelocity.x));
@@ -124,6 +127,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void Jump()
     {
+        rgbd.linearVelocity = new Vector2(rgbd.linearVelocity.x, 0f);
         rgbd.AddForce(new Vector2(0, jumpForce));
         int randomValue = Random.Range(0, jumpSounds.Length);
         audiosource.PlayOneShot(jumpSounds[randomValue], 0.7f);//spela en gång fada in och ut, randomiserar vilken av hoppljuded som spelas
