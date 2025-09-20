@@ -3594,7 +3594,7 @@ MonoBehaviour:
   finishedText: {fileID: 1735001094}
   unFinishedText: {fileID: 1920026862}
   questGoal: 9
-  levelToLoad: 2
+  levelLoader: {fileID: 2097730955}
 --- !u!61 &475611395
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -25478,6 +25478,17 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &2097730955 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1715958884448507764, guid: da9a73dca2ba1ac48955d2af85b8e947, type: 3}
+  m_PrefabInstance: {fileID: 924001633782701310}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: abd5ff3140686ce4b8a14cdb3d4dfe3f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2100436673
 GameObject:
   m_ObjectHideFlags: 0
@@ -25883,6 +25894,63 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1001 &924001633782701310
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 7121154501953094786, guid: da9a73dca2ba1ac48955d2af85b8e947, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 1.7472416
+      objectReference: {fileID: 0}
+    - target: {fileID: 7121154501953094786, guid: da9a73dca2ba1ac48955d2af85b8e947, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.02093229
+      objectReference: {fileID: 0}
+    - target: {fileID: 7121154501953094786, guid: da9a73dca2ba1ac48955d2af85b8e947, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.04504037
+      objectReference: {fileID: 0}
+    - target: {fileID: 7121154501953094786, guid: da9a73dca2ba1ac48955d2af85b8e947, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7121154501953094786, guid: da9a73dca2ba1ac48955d2af85b8e947, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7121154501953094786, guid: da9a73dca2ba1ac48955d2af85b8e947, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7121154501953094786, guid: da9a73dca2ba1ac48955d2af85b8e947, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7121154501953094786, guid: da9a73dca2ba1ac48955d2af85b8e947, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7121154501953094786, guid: da9a73dca2ba1ac48955d2af85b8e947, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7121154501953094786, guid: da9a73dca2ba1ac48955d2af85b8e947, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7906256962540276662, guid: da9a73dca2ba1ac48955d2af85b8e947, type: 3}
+      propertyPath: m_Name
+      value: LevelLoader
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: da9a73dca2ba1ac48955d2af85b8e947, type: 3}
 --- !u!1001 &981661634247239763
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -25944,6 +26012,7 @@ PrefabInstance:
 SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
+  - {fileID: 924001633782701310}
   - {fileID: 519420032}
   - {fileID: 619394802}
   - {fileID: 1848648835}

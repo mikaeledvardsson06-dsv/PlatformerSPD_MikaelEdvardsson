@@ -6,7 +6,7 @@ public class QuestChecker : MonoBehaviour
 
     [SerializeField] private GameObject dialougeBox, finishedText, unFinishedText;
     [SerializeField] private int questGoal = 10;
-    [SerializeField] private int levelToLoad;
+    [SerializeField] private LevelLoader levelLoader;
 
     private Animator anim;
     private bool levelIsLoading = false;
@@ -25,9 +25,11 @@ public class QuestChecker : MonoBehaviour
                 dialougeBox.SetActive(true);
                 finishedText.SetActive(true);
                 anim.SetTrigger("Flag");
-                Invoke("LoadNextLevel", 3f);// 2 sec delay på att byta level
+
                 levelIsLoading = true;
-                
+
+                Invoke(nameof(StartLevelTransition), 3f);
+
 
             }
             else
@@ -38,9 +40,9 @@ public class QuestChecker : MonoBehaviour
         }
     }
 
- private void LoadNextLevel()
+ private void StartLevelTransition()
     {
-        SceneManager.LoadScene(levelToLoad);//byter level
+        levelLoader.LoadNextLevel();
     }
 
     private void OnTriggerExit2D(Collider2D other)
