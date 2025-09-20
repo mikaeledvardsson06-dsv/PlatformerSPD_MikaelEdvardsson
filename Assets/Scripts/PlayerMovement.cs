@@ -19,7 +19,7 @@ public class PlayerMovement : MonoBehaviour
 
     private Animator anim;
 
-    private int startingHealth = 5;
+    public int startingHealth = 5;
     private int currentHealth = 0;
 
     [SerializeField] Transform SpawnPosition;

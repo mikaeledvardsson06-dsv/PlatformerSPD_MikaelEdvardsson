@@ -6,7 +6,7 @@ public class EnemyMovement : MonoBehaviour
     [SerializeField] private float bounce = 100;
     private SpriteRenderer rend;
 
-    [SerializeField] private int damageGiven = 1;
+    public int damageGiven = 1;
 
     [SerializeField] private float knockbackForce = 200f;
     [SerializeField] private float upwardForce = 100f;
