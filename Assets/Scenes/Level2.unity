@@ -4861,6 +4861,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 89582659475722827, guid: 7cf9d940d7151854f8502040e78b2444, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: fd1c0f06bb455a746a989890b5f2ae98, type: 2}
     - target: {fileID: 3950364800168222348, guid: 7cf9d940d7151854f8502040e78b2444, type: 3}
       propertyPath: m_Name
       value: FireTrap
