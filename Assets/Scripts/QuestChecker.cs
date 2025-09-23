@@ -5,7 +5,7 @@ public class QuestChecker : MonoBehaviour
 {
 
     [SerializeField] private GameObject dialougeBox, finishedText, unFinishedText;
-    [SerializeField] private int questGoal = 10;
+    [SerializeField] private int questGoal = 7;
     [SerializeField] private LevelLoader levelLoader;
 
     private Animator anim;
