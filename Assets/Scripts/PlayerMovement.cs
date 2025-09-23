@@ -1,4 +1,6 @@
+using System.Collections;
 using TMPro;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -10,6 +12,8 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private LayerMask whatIsGround;
     [SerializeField] private Transform leftFoot, rightFoot;
     [SerializeField] private int extraJumpValue = 1;
+    [SerializeField] private GameObject burnEffect;
+
     private float horizontalValue;
     private bool isGrounded;
     private Rigidbody2D rgbd;
@@ -21,6 +25,8 @@ public class PlayerMovement : MonoBehaviour
 
     public int startingHealth = 5;
     private int currentHealth = 0;
+
+    private GameObject currentBurnEffect;
 
     [SerializeField] Transform SpawnPosition;
 
@@ -217,6 +223,37 @@ public class PlayerMovement : MonoBehaviour
         else
         {
             return false;
+        }
+    }
+
+    public void StartBurn(int burnDamage, float burnDuration, float tickInterval)
+    {
+        if (currentBurnEffect != null)
+            Destroy(currentBurnEffect);
+
+        if (burnEffect != null)
+        {
+            currentBurnEffect = Instantiate(burnEffect, transform);
+            currentBurnEffect.transform.localPosition = new Vector3(0f, 1f, 0f);
+        }
+
+        StartCoroutine(BurnRoutine(burnDamage, burnDuration, tickInterval));
+    }
+
+    private IEnumerator BurnRoutine(int burnDamage, float burnDuration, float tickInterval)
+    {
+        float timePassed = 0f;
+        while (timePassed < burnDuration)
+        {
+            TakeDamage(burnDamage);
+            yield return new WaitForSeconds(tickInterval);
+            timePassed += tickInterval;
+        }
+
+        if (currentBurnEffect != null)
+        {
+            Destroy(currentBurnEffect);
+            currentBurnEffect = null;
         }
     }
 }

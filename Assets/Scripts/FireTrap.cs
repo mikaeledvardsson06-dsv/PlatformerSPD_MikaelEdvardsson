@@ -79,6 +79,7 @@ public class Firetrap : MonoBehaviour
             if (health != null && Time.time >= lastDamageTime + damageCooldown)
             {
                 health.TakeDamage(damageAmount);
+                health.StartBurn(1, 2f, 1f);
                 lastDamageTime = Time.time;
             }
         }

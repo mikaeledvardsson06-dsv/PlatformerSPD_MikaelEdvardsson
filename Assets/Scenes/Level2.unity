@@ -4853,6 +4853,63 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 584276660}
   m_CullTransparentMesh: 1
+--- !u!1001 &611895046
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 3950364800168222348, guid: 7cf9d940d7151854f8502040e78b2444, type: 3}
+      propertyPath: m_Name
+      value: FireTrap
+      objectReference: {fileID: 0}
+    - target: {fileID: 6954187484274506732, guid: 7cf9d940d7151854f8502040e78b2444, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.18996716
+      objectReference: {fileID: 0}
+    - target: {fileID: 6954187484274506732, guid: 7cf9d940d7151854f8502040e78b2444, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -2.350388
+      objectReference: {fileID: 0}
+    - target: {fileID: 6954187484274506732, guid: 7cf9d940d7151854f8502040e78b2444, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6954187484274506732, guid: 7cf9d940d7151854f8502040e78b2444, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6954187484274506732, guid: 7cf9d940d7151854f8502040e78b2444, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6954187484274506732, guid: 7cf9d940d7151854f8502040e78b2444, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6954187484274506732, guid: 7cf9d940d7151854f8502040e78b2444, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6954187484274506732, guid: 7cf9d940d7151854f8502040e78b2444, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6954187484274506732, guid: 7cf9d940d7151854f8502040e78b2444, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6954187484274506732, guid: 7cf9d940d7151854f8502040e78b2444, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 7cf9d940d7151854f8502040e78b2444, type: 3}
 --- !u!1 &611996793
 GameObject:
   m_ObjectHideFlags: 0
@@ -6560,7 +6617,7 @@ TilemapRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_ChunkSize: {x: 32, y: 32, z: 32}
-  m_ChunkCullingBounds: {x: 0, y: 0, z: 0}
+  m_ChunkCullingBounds: {x: 0, y: 0.5, z: 0}
   m_MaxChunkCount: 16
   m_MaxFrameAge: 16
   m_SortOrder: 0
@@ -8282,7 +8339,7 @@ SpriteRenderer:
   m_Size: {x: 1, y: 1}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!1 &741409422
@@ -12106,7 +12163,7 @@ SpriteRenderer:
   m_Size: {x: 1, y: 1}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!1 &1013471093
@@ -12280,7 +12337,7 @@ SpriteRenderer:
   m_Size: {x: 1, y: 1}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!1 &1028978216
@@ -19802,7 +19859,7 @@ SpriteRenderer:
   m_Size: {x: 1, y: 1}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!1001 &1789384569
@@ -20586,7 +20643,7 @@ SpriteRenderer:
   m_Size: {x: 1, y: 1}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!1 &1840144304
@@ -21028,6 +21085,7 @@ MonoBehaviour:
   leftFoot: {fileID: 1353467661}
   rightFoot: {fileID: 1562661758}
   extraJumpValue: 1
+  burnEffect: {fileID: 8718329429452138185, guid: 8577ea42e10ec1e44997df79b40bf4fb, type: 3}
   startingHealth: 5
   SpawnPosition: {fileID: 21409026}
   HealthSlider: {fileID: 1055720651}
@@ -21320,7 +21378,7 @@ TilemapRenderer:
   m_SortingLayer: 1
   m_SortingOrder: 0
   m_ChunkSize: {x: 32, y: 32, z: 32}
-  m_ChunkCullingBounds: {x: 0, y: 0, z: 0}
+  m_ChunkCullingBounds: {x: 0, y: 0.5, z: 0}
   m_MaxChunkCount: 16
   m_MaxFrameAge: 16
   m_SortOrder: 0
@@ -28692,3 +28750,4 @@ SceneRoots:
   - {fileID: 1519888217}
   - {fileID: 1632906771}
   - {fileID: 1396064365}
+  - {fileID: 611895046}
