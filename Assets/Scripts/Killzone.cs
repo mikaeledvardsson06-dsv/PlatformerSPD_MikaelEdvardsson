@@ -7,6 +7,11 @@ public class Killzone : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
+            if (DeathCounter.current != null)
+            {
+                DeathCounter.current.AddDeath();
+            }
+
             other.transform.position = SpawnPosition.position; //reagerar på killboxen av spelaren
             other.GetComponent<Rigidbody2D>().linearVelocity = Vector2.zero;
         }
