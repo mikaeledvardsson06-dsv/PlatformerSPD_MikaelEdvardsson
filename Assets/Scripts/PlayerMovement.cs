@@ -143,12 +143,14 @@ public class PlayerMovement : MonoBehaviour
 
     public void TakeDamage(int damageAmount)
     {
+        if (currentHealth <= 0) return;
+
         currentHealth -= damageAmount;
         UpdateHealthBar();
 
         if (currentHealth <= 0)
         {
-            Respawn();
+            GameOver.example.ShowGameOver();
         }
 
     }
