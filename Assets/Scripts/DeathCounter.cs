@@ -22,17 +22,13 @@ public class DeathCounter : MonoBehaviour
 
         DontDestroyOnLoad(gameObject);
 
-        SceneManager.sceneLoaded += OnSceneLoaded;
-    }
-
-    private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
-    {
         if (deathText == null)
         {
-            deathText = Object.FindAnyObjectByType<TMP_Text>();
+            deathText = GetComponentInChildren<TMP_Text>();
         }
 
         UpdateDeathUI();
+
     }
 
     public void AddDeath ()
@@ -51,6 +47,6 @@ public class DeathCounter : MonoBehaviour
 
     private void OnDestroy()
     {
-        SceneManager.sceneLoaded -= OnSceneLoaded;
+        if (current == this) current = null;
     }
 }
