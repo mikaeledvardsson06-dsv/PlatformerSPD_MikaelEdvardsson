@@ -42,6 +42,12 @@ public class GameOver : MonoBehaviour
     public void RestartLevel()
     {
         Time.timeScale = 1f;
+
+        if (DeathCounter.current != null)
+        {
+            DeathCounter.current.AddDeath();
+        }
+
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 
