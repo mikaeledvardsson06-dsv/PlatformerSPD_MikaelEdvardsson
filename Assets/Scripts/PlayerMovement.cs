@@ -49,6 +49,12 @@ public class PlayerMovement : MonoBehaviour
     void Start()
     {
         canMove = true;
+
+        if (Difficulty.current != null)
+        {
+            startingHealth = Difficulty.current.playerHealth;
+        }
+
         currentHealth = startingHealth;
         melonsText.text = "" + melonsCollected; //lurar programmet till att tro att apples är en string
         rgbd = GetComponent<Rigidbody2D>();
