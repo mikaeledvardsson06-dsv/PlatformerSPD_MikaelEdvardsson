@@ -9,6 +9,7 @@ TagManager:
   - Enemy
   - Melon
   - Health
+  - Music
   layers:
   - Default
   - TransparentFX
