@@ -1,5 +1,5 @@
-using UnityEngine;
 using TMPro;
+using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class DeathCounter : MonoBehaviour
@@ -31,9 +31,40 @@ public class DeathCounter : MonoBehaviour
 
     }
 
+    private void OnEnable()
+    {
+        SceneManager.sceneLoaded += OnSceneLoaded;
+    }
+
+    private void OnDisable()
+    {
+        SceneManager.sceneLoaded -= OnSceneLoaded;
+    }
+
+    private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
+    {
+        if (deathText != null)
+        {
+            if (scene.buildIndex == 0)
+            {
+                deathText.gameObject.SetActive(false);
+            }
+            else
+            {
+                deathText.gameObject.SetActive(true);
+            }
+        }
+    }
+
     public void AddDeath ()
     {
         deaths++;
+        UpdateDeathUI();
+    }
+
+    public void ResetDeaths()
+    {
+        deaths = 0;
         UpdateDeathUI();
     }
 
