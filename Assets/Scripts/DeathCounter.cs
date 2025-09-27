@@ -1,5 +1,6 @@
 using UnityEngine;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class DeathCounter : MonoBehaviour
 {
@@ -11,15 +12,27 @@ public class DeathCounter : MonoBehaviour
 
     private void Awake()
     {
-        if (current == null)
-        {
-            current = this;
-            DontDestroyOnLoad(gameObject);
-        }
-        else
+        if (current != null && current != this)
         {
             Destroy(gameObject);
+            return;
         }
+
+        current = this;
+
+        DontDestroyOnLoad(gameObject);
+
+        SceneManager.sceneLoaded += OnSceneLoaded;
+    }
+
+    private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
+    {
+        if (deathText == null)
+        {
+            deathText = Object.FindAnyObjectByType<TMP_Text>();
+        }
+
+        UpdateDeathUI();
     }
 
     public void AddDeath ()
@@ -34,5 +47,10 @@ public class DeathCounter : MonoBehaviour
         {
             deathText.text = deaths.ToString();
         }
+    }
+
+    private void OnDestroy()
+    {
+        SceneManager.sceneLoaded -= OnSceneLoaded;
     }
 }
