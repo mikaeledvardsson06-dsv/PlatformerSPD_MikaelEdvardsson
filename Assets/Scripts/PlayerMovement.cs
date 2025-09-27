@@ -24,7 +24,8 @@ public class PlayerMovement : MonoBehaviour
     private Animator anim;
 
     public int startingHealth = 5;
-    private int currentHealth = 0;
+    public int currentHealth = 0;
+    public static PlayerMovement current;
 
     private GameObject currentBurnEffect;
 
@@ -48,6 +49,7 @@ public class PlayerMovement : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        current = this;
         canMove = true;
 
         if (Difficulty.current != null)
@@ -61,6 +63,8 @@ public class PlayerMovement : MonoBehaviour
         rend = GetComponent<SpriteRenderer>();
         anim = GetComponent<Animator>();
         audiosource = GetComponent<AudioSource>();
+
+        UpdateHealthBarMax();
     }
 
     // Update is called once per frame
@@ -218,6 +222,15 @@ public class PlayerMovement : MonoBehaviour
 
     }
 
+    public void UpdateHealthBarMax()
+    {
+        if (HealthSlider != null)
+        {
+            HealthSlider.maxValue = startingHealth;
+            HealthSlider.value = currentHealth;
+        }
+    }
+
     private bool CheckIfGrounded()
     {
         RaycastHit2D leftHit = Physics2D.Raycast(leftFoot.position, Vector2.down, rayDistance, whatIsGround);
@@ -263,5 +276,10 @@ public class PlayerMovement : MonoBehaviour
             Destroy(currentBurnEffect);
             currentBurnEffect = null;
         }
+    }
+
+    private void OnDestroy()
+    {
+        if (current == this) current = null;
     }
 }

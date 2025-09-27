@@ -22,18 +22,42 @@ public class Difficulty : MonoBehaviour
     public void setEasy()
     {
         playerHealth = 10;
+
+        if (PlayerMovement.current != null)
+        {
+            PlayerMovement.current.startingHealth = playerHealth;
+            PlayerMovement.current.currentHealth = playerHealth;
+            PlayerMovement.current.UpdateHealthBarMax();
+        }
+
         Debug.Log("You selected Easy Mode!  Player Health:" + Difficulty.current.playerHealth);
     }
 
     public void setMedium()
     {
         playerHealth = 5;
+
+        if (PlayerMovement.current != null)
+        {
+            PlayerMovement.current.startingHealth = playerHealth;
+            PlayerMovement.current.currentHealth = playerHealth;
+            PlayerMovement.current.UpdateHealthBarMax();
+        }
+
         Debug.Log("You selected Medium Mode!  Player Health:" + Difficulty.current.playerHealth);
     }
 
     public void setHard()
     {
         playerHealth = 2;
+
+        if (PlayerMovement.current != null)
+        {
+            PlayerMovement.current.startingHealth = playerHealth;
+            PlayerMovement.current.currentHealth = playerHealth;
+            PlayerMovement.current.UpdateHealthBarMax();
+        }
+
         Debug.Log("You selected Hard Mode!  Player Health:" + Difficulty.current.playerHealth);
     }
 }
