@@ -162,11 +162,6 @@ public class PlayerMovement : MonoBehaviour
 
     private void Respawn()
     {
-        if (DeathCounter.current != null)
-        {
-            DeathCounter.current.AddDeath();
-        }
-
         currentHealth = startingHealth; // respawna med samma health
         UpdateHealthBar();
         transform.position = SpawnPosition.position; 
